@@ -4,10 +4,11 @@
 
 .link {
   color: white;
-  transition: all 2s;
+  transition: all .6s ease-in;
 }
 
 .link:hover {
-  background-image: linear-gradient(0deg, rgb(234 250 173 / 100%) 0%, rgb(64 64 64 / 100%) 72%);
-  transition: all 2s;
+  cursor: pointer;
+  transition: all .3s ease-out;
+  transform: translateX(10px);
 }
