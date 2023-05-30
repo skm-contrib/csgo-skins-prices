@@ -1,0 +1,65 @@
+{
+  "pistols": [
+    { "name": "Glock-18" },
+    { "name": "P2000" },
+    { "name": "USP-S" },
+    { "name": "Dual Berettas" },
+    { "name": "P250" },
+    { "name": "Five-SeveN" },
+    { "name": "Tec-9" },
+    { "name": "CZ75-Auto" },
+    { "name": "Desert Eagle" },
+    { "name": "R8 Revolver" }
+  ],
+  "rifles": [
+    { "name": "AK-47" },
+    { "name": "M4A4" },
+    { "name": "M4A1-S" },
+    { "name": "Galil AR" },
+    { "name": "FAMAS" },
+    { "name": "AUG" },
+    { "name": "SG 553" },
+    { "name": "AWP" },
+    { "name": "G3SG1" },
+    { "name": "SCAR-20" },
+    { "name": "SSG 08" }
+    ],
+  "heavy": [
+    { "name": "XM1014" },
+    { "name": "MAG-7" },
+    { "name": "Sawed-Off" },
+    { "name": "Nova" },
+    { "name": "M249" },
+    { "name": "Negev" }
+  ],
+  "smgs": [
+    { "name": "MP9" },
+    { "name": "MP7" },
+    { "name": "UMP-45" },
+    { "name": "P90" },
+    { "name": "PP-Bizon" },
+    { "name": "MAC-10" },
+    { "name": "MP5-SD" }
+  ],
+  "knifes": [
+    { "name": "Bayonet" },
+    { "name": "Flip Knife" },
+    { "name": "Gut Knife" },
+    { "name": "Karambit" },
+    { "name": "M9 Bayonet" },
+    { "name": "Paracord Knife" },
+    { "name": "Classic Knife" },
+    { "name": "Huntsman Knife" },
+    { "name": "Falchion Knife" },
+    { "name": "Bowie Knife" },
+    { "name": "Butterfly Knife" },
+    { "name": "Shadow Daggers" },
+    { "name": "Navaja Knife" },
+    { "name": "Stiletto Knife" },
+    { "name": "Ursus Knife" },
+    { "name": "Talon Knife" },
+    { "name": "Skeleton Knife" },
+    { "name": "Nomad Knife" },
+    { "name": "Survival Knife" }
+  ]
+}

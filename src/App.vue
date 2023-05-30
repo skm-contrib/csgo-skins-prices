@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div class="flex flex-col">
     <div
-      class="w-2/3 m-auto font-bold bg-palette-300 flex text-palette-100 flex-row transition duration-300"
+      class="w-2/3 m-auto font-bold bg-palette-300 flex text-palette-100 flex-row justify-between items-center transition duration-300 rounded-b-xl"
     >
       <div class="flex flex-row">
         <div class="m-4">
@@ -98,6 +98,23 @@ import { RouterLink, RouterView } from "vue-router";
           </div>
         </div>
       </div>
+      <div
+        class="m-4 z-10"
+        @mouseover="showProfile = true"
+        @mouseleave="showProfile = false"
+      >
+        <RouterLink
+          class="p-4"
+          :to="{ name: 'Weapons', params: { type: 'knifes' } }"
+          >Акаунт</RouterLink
+        >
+        <div
+          class="absolute bg-palette-300 top-12 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-25 flex flex-col"
+          v-if="showProfile"
+        >
+          <accountSelector />
+        </div>
+      </div>
     </div>
 
     <RouterView class="pt-12" />
@@ -110,6 +127,7 @@ import rifleSelector from "./components/modals/RifleSelector.vue";
 import smgSelector from "./components/modals/SmgSelector.vue";
 import heavySelector from "./components/modals/HeavySelector.vue";
 import knifeSelector from "./components/modals/KnifeSelector.vue";
+import accountSelector from "./components/modals/AccountSelector.vue";
 export default {
   data() {
     return {
@@ -118,6 +136,7 @@ export default {
       showSMG: false,
       showHeavy: false,
       showKnife: false,
+      showProfile: false,
     };
   },
   components: {
@@ -126,6 +145,7 @@ export default {
     smgSelector,
     heavySelector,
     knifeSelector,
+    accountSelector,
   },
 };
 </script>

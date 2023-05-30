@@ -4,8 +4,7 @@ import { useRouter } from "vue-router"
 
 export default function jsonRequest() {
     const skins = ref([]);
-    const prices = ref ([]);
-    var header = "Access-Control-Allow-Origin: *"
+    const skin = ref();
 
     const getAllSkins = async () => {
         const response = await axios.get("https://bymykel.github.io/CSGO-API/api/en/skins.json");
@@ -13,32 +12,55 @@ export default function jsonRequest() {
         return skins
     };
     const getAllSkinsByType = async (type) => {
+
         const response =
         await axios.get("https://bymykel.github.io/CSGO-API/api/en/skins.json");
-        //
         const data = response.data;
+        const filteredObjects = ref([]);
         console.log(type)
-        const filteredObjects = data.filter(obj => obj.weapon === type);
+        for(var i = 0; i > type.length; i++)
+        {
+            console.log('asd')
+        }
+
+        type.forEach(gunName => {
+            filteredObjects.value.push(data.filter(obj => obj.weapon === gunName.name))
+        });
+
+        skins.value = filteredObjects.value[0];
+        return skins
+    };
+
+    const getAllSkinsByName = async (name) => {
+        const response =
+        await axios.get("https://bymykel.github.io/CSGO-API/api/en/skins.json");
+        const data = response.data;
+
+        const filteredObjects = data.filter(obj => obj.weapon === name);
+        console.log(filteredObjects)
+
         skins.value = filteredObjects;
         return skins
     };
 
-    const getSkinPrice = async () => {
-        const response = await axios.get("https://loot.farm/fullprice.json",
-        {headers: {header}});
-        prices.value = response.data;
+    const getSkinByName = async (name) => {
+        const response =
+        await axios.get("https://bymykel.github.io/CSGO-API/api/en/skins.json");
+        //
+        const data = response.data;
 
-        const filteredObjects = response.filter(obj => obj.name === 'Blaze');
-        console.log(filteredObjects);
+        const filteredObjects = data.filter(obj => obj.name === name);
 
-        return prices
+        skin.value = filteredObjects[0];
+        return skin
     };
 
     return {
+        skin,
         skins,
-        prices,
         getAllSkins,
-        getSkinPrice,
+        getSkinByName,
+        getAllSkinsByName,
         getAllSkinsByType
     }
 }
