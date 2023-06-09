@@ -1,25 +1,17 @@
 package ua.csgo.domain.repository;
 
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 import ua.csgo.domain.model.Skin;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.List;
 
-public interface SkinRepository {
-
-    Skin findById(int id);
-
-    List<Skin> findAll();
-
-    List<Skin> findAllByWeapon(String weapon);
-
-    List<Skin> findAllByRarity(String rarity);
-
-    List<Skin> getFavorites(int id);
-
-    Skin addFavorite(int id);
-
-    boolean removeFavorite(int id);
+@Repository
+public interface SkinRepository extends JpaRepository<Skin, String> {
+    @Query("select s from Skin s where (lower(s.name) like lower(concat('%', :search, '%'))) and (lower(s.weaponType) like lower(concat('%', :weapon_type, '%'))) and (lower(s.weapon) like lower(concat('%', :weapon, '%')))")
+    List<Skin> findAll(Pageable page, @Param("search") String search, @Param("weapon_type") String weaponType, @Param("weapon") String weapon);
 }
