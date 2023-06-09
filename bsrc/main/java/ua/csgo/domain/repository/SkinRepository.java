@@ -3,6 +3,8 @@ package ua.csgo.domain.repository;
 
 import ua.csgo.domain.model.Skin;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 
 public interface SkinRepository {

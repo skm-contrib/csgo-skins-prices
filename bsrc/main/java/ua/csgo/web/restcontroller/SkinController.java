@@ -21,8 +21,13 @@ public class SkinController {
     public ResponseEntity<List<Skin>> getAllSkins() {
         return ResponseEntity.ok(skinService.findAll());
     }
+/*
+    @GetMapping
+    public ResponseEntity<List<Skin>> getSkins() {
+        return ResponseEntity.ok(skinService.findAll());
+    }*/
 
-    @GetMapping(params = {"rarity"})
+   /* @GetMapping(params = {"rarity"})
     public ResponseEntity<List<Skin>> getAllSkinsByRarity(@PathVariable String rarity) {
         return ResponseEntity.ok(skinService.findAllByRarity(rarity));
     }
@@ -46,5 +51,5 @@ public class SkinController {
     public ResponseEntity<String> daleteFavorite(@PathVariable int id) {
         return ResponseEntity.ok(skinService.removeFavorite(id) ? "Скін з id: " + id + " видалено з улюблених" : "Не видалено");
     }
-
+*/
 }
