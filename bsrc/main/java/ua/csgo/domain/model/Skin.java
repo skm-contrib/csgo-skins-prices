@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "skins")
 public class Skin {
     @Id
-    @Column(name = "skin_id", columnDefinition = "TEXT")
+    @Column(name = "skin_id")
     private String skinId;
     private String id;
     @Column(columnDefinition = "TEXT")
