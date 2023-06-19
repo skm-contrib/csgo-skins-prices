@@ -7,6 +7,8 @@ import lombok.Data;
 
 @Data
 public class AuthDTO {
+    @NotBlank(message = "Нікнейм не може бути порожнім")
+    private String nickname;
     @NotBlank(message = "Електрона адреса не має бути порожня")
     @Email(message = "Електрона адреса не коректна")
     private String email;

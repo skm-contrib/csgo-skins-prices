@@ -17,6 +17,7 @@ public class UserFactory {
     public User fromDto(UserDTORequest request) {
         return User.builder()
                 .id(request.getId())
+                .nickname(request.getNickname())
                 .email(request.getEmail())
                 .role(request.getRole())
                 .password(request.getPassword())
@@ -25,6 +26,7 @@ public class UserFactory {
 
     public User fromDto(AuthDTO authDTO) {
         return User.builder()
+                .nickname(authDTO.getNickname())
                 .email(authDTO.getEmail())
                 .password(passwordEncoder.encode(authDTO.getPassword()))
                 .role("ROLE_USER")
@@ -34,6 +36,7 @@ public class UserFactory {
     public UserDTOResponse toDto(User user) {
         return UserDTOResponse.builder()
                 .id(user.getId())
+                .nickname(user.getNickname())
                 .email(user.getEmail())
                 .favorites(user.getFavorites())
                 .role(user.getRole())

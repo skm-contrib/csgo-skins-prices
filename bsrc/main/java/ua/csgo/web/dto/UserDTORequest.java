@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class UserDTORequest {
 
     private int id;
+    private String nickname;
     private String email;
     private String password;
     private String role;
