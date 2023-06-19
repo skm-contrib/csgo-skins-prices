@@ -32,6 +32,7 @@ public class UserFactory {
                 .nickname(request.getNickname())
                 .email(request.getEmail())
                 .role("ROLE_USER")
+                .password(request.getPassword())
                 .build();
     }
 
