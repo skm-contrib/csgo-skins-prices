@@ -8,6 +8,7 @@ import ua.csgo.domain.model.User;
 import ua.csgo.domain.repository.UserRepository;
 import ua.csgo.domain.service.AuthService;
 import ua.csgo.web.dto.AuthDTO;
+import ua.csgo.web.dto.UserDTOResponse;
 import ua.csgo.web.exception.UserAlreadyRegisteredException;
 
 @Component
@@ -18,16 +19,16 @@ public class AuthServiceImpl implements AuthService {
     private final UserFactory userFactory;
 
     @Override
-    public User signup(AuthDTO signup) {
+    public UserDTOResponse signup(AuthDTO signup) {
         if (userRepository.existsByEmail(signup.getEmail()))
             throw new UserAlreadyRegisteredException("Ця електронна пошта вже зайнята");
 
-        return userRepository.save(userFactory.fromDto(signup));
+        return userFactory.toDto(userRepository.save(userFactory.fromDto(signup)));
     }
 
     @Override
-    public User login(AuthDTO login) {
-        return userRepository.findByEmailAndPassword(login.getEmail(), login.getPassword())
-                .orElseThrow(() -> new EntityNotFoundException("Не правильний логін або пароль"));
+    public UserDTOResponse login(AuthDTO login) {
+        return userFactory.toDto(userRepository.findByEmailAndPassword(login.getEmail(), login.getPassword())
+                .orElseThrow(() -> new EntityNotFoundException("Не правильний логін або пароль")));
     }
 }
