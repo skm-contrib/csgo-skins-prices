@@ -12,4 +12,6 @@ public interface FavoritesService {
     Skin add(int id, String skinId);
 
     String remove(int id, String skinId);
+
+    boolean isSkinInFavorites(int id, String skinId);
 }

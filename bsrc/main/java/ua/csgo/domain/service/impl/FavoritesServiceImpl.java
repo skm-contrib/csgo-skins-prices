@@ -46,4 +46,9 @@ public class FavoritesServiceImpl implements FavoritesService {
         userRepository.save(user);
         return "Успішно видалено з обраних";
     }
+
+    @Override
+    public boolean isSkinInFavorites(int id, String skinId) {
+        return skinRepository.isSkinInFavorites(id, skinId);
+    }
 }

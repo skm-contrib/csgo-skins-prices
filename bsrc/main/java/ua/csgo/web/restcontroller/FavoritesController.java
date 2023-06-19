@@ -23,6 +23,12 @@ public class FavoritesController {
         return ResponseEntity.ok(favoritesService.findAll(PageRequest.of(page, count), id));
     }
 
+    @GetMapping("/{id}/{skin_id}")
+    public ResponseEntity<Boolean> isSkinInFavorites(@PathVariable int id,
+                                                     @PathVariable(name = "skin_id") String skinId){
+        return ResponseEntity.ok(favoritesService.isSkinInFavorites(id, skinId));
+    }
+
     @PostMapping("/{id}/{skin_id}")
     public ResponseEntity<Skin> addFavorite(@PathVariable int id,
                                             @PathVariable(name = "skin_id") String skinId) {
@@ -34,4 +40,6 @@ public class FavoritesController {
                                                  @PathVariable(name = "skin_id") String skinId) {
         return ResponseEntity.ok(favoritesService.remove(id, skinId));
     }
+
+
 }

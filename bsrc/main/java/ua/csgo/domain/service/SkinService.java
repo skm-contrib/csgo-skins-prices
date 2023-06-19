@@ -9,11 +9,7 @@ import java.util.List;
 
 public interface SkinService {
     Skin findById(String id);
-
     List<Skin> findAll();
     long count(String search,  String weapon, String weaponType);
-
-
-
     List<Skin> findAll(PageRequest of, String weaponType, String weapon, String search, Sort skinSort);
 }
