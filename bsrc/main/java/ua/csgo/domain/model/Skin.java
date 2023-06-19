@@ -48,5 +48,6 @@ public class Skin {
     private List<User> users;
 
     @OneToMany(mappedBy = "skin")
+    @JsonIgnoreProperties("skin")
     private List<SkinPrice> skinPrices;
 }
