@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.csgo.domain.model.User;
 import ua.csgo.domain.service.AuthService;
 import ua.csgo.web.dto.AuthDTO;
+import ua.csgo.web.dto.RegisterDTO;
 import ua.csgo.web.dto.UserDTORequest;
 import ua.csgo.web.dto.UserDTOResponse;
 
@@ -26,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<UserDTOResponse> signup(@RequestBody @Valid AuthDTO authDTO){
+    public ResponseEntity<UserDTOResponse> signup(@RequestBody @Valid RegisterDTO authDTO){
         return ResponseEntity.ok(authService.signup(authDTO));
     }
 
