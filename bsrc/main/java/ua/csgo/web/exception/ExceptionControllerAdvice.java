@@ -1,6 +1,7 @@
 package ua.csgo.web.exception;
 
 import org.springframework.boot.context.properties.bind.validation.ValidationErrors;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -25,12 +26,12 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<Map<String, List<String>>> handleValidationException(MethodArgumentNotValidException exception) {
+    public ResponseEntity<List<String>> handleValidationException(MethodArgumentNotValidException exception) {
+        List<String> errors = new ArrayList<>();
         List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
-        Map<String, List<String>> errors = new HashMap<>();
 
         for (FieldError fieldError : fieldErrors) {
-            errors.getOrDefault(fieldError.getField(), new ArrayList<>()).add(fieldError.getDefaultMessage());
+            errors.add(fieldError.getDefaultMessage());
         }
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
