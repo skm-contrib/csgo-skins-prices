@@ -1,5 +1,6 @@
 package ua.csgo.web.exception;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.boot.context.properties.bind.validation.ValidationErrors;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
@@ -19,11 +20,9 @@ import java.util.Map;
 public class ExceptionControllerAdvice {
 
     @ExceptionHandler({UserAlreadyRegisteredException.class})
-    public ResponseEntity<String[]> handleUserAlreadyRegisteredException(UserAlreadyRegisteredException e) {
-        String[] error = new String[1];
-        error[0] = e.getMessage();
+    public ResponseEntity<List<String>> handleUserAlreadyRegisteredException(UserAlreadyRegisteredException e) {
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE)
-                .body(error);
+                .body(List.of(e.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -35,7 +34,12 @@ public class ExceptionControllerAdvice {
         for (FieldError fieldError : fieldErrors) {
             errors.add(fieldError.getDefaultMessage());
         }
-
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<List<String>> handleEntityNotFound(EntityNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(List.of(e.getMessage()));
     }
 }

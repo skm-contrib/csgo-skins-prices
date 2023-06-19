@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class UserDTOResponse {
     private int id;
+    private String nickname;
     private String email;
     private String role;
     private List<Skin> favorites;
