@@ -1,5 +1,6 @@
 package ua.csgo.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +22,11 @@ public class User {
     private String email;
     private String password;
     private String role;
-    @JoinTable(name = "favorites")
-    List<Integer> favorites;
+
+    @ManyToMany
+    @JoinTable(name = "favorites",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "skin_id"))
+    @JsonIgnoreProperties("users")
+    private List<Skin> favorites;
 }

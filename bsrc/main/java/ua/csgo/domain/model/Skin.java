@@ -1,13 +1,13 @@
 package ua.csgo.domain.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -41,4 +41,10 @@ public class Skin {
     private int res;
     @Column(name = "weapon_type")
     private String weaponType;
+    @ManyToMany(mappedBy = "favorites")
+    @JsonIgnoreProperties("favorites")
+    private List<User> users;
+
+    @OneToMany(mappedBy = "skin")
+    private List<SkinPrice> skinPrices;
 }

@@ -18,9 +18,9 @@ public class SkinPrice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "skin_id")
-    private String skinId;
+    @ManyToOne
+    @JoinColumn(name = "skin_id")
+    private Skin skin;
     private float price;
     private Date timestamp;
 }
