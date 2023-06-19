@@ -1,6 +1,8 @@
 package ua.csgo.domain.service;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import ua.csgo.domain.model.Skin;
 
 import java.util.List;
@@ -10,7 +12,8 @@ public interface SkinService {
 
     List<Skin> findAll();
 
-    List<Skin> findAll(Pageable page, String search, String weaponType, String weapon) ;
 
     long count();
+
+    List<Skin> findAll(PageRequest of, String weaponType, String weapon, String search, Sort skinSort);
 }
