@@ -12,4 +12,5 @@ public interface SkinService {
 
     List<Skin> findAll(Pageable page, String search, String weaponType, String weapon) ;
 
+    long count();
 }

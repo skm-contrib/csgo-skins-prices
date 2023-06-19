@@ -30,4 +30,9 @@ public class SkinServiceImpl implements SkinService {
         return repository.findAll(page, search, weaponType, weaponType);
     }
 
+    @Override
+    public long count() {
+        return repository.count();
+    }
+
 }
