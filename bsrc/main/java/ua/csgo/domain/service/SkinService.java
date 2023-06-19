@@ -1,21 +1,15 @@
 package ua.csgo.domain.service;
 
+import org.springframework.data.domain.Pageable;
 import ua.csgo.domain.model.Skin;
 
 import java.util.List;
 
 public interface SkinService {
-    Skin findById(int id);
+    Skin findById(String id);
 
     List<Skin> findAll();
 
-    List<Skin> findAllByWeapon(String weapon);
+    List<Skin> findAll(Pageable page, String search, String weaponType, String weapon) ;
 
-    List<Skin> findAllByRarity(String rarity);
-
-    List<Skin> getFavorites(int id);
-
-    Skin addFavorite(int id);
-
-    boolean removeFavorite(int id);
 }

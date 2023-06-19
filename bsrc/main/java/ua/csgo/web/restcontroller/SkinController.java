@@ -1,7 +1,11 @@
 package ua.csgo.web.restcontroller;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ua.csgo.domain.model.Skin;
 import ua.csgo.domain.service.SkinService;
 
@@ -18,33 +22,14 @@ public class SkinController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Skin>> getAllSkins() {
-        return ResponseEntity.ok(skinService.findAll());
+    public ResponseEntity<List<Skin>> getSkins(@RequestParam(name = "search", required = false) String search,
+                                               @RequestParam(name = "page", defaultValue = "0", required = false) int page,
+                                               @RequestParam(name = "count", defaultValue = "20", required = false) int count,
+                                               @RequestParam(name = "weapon_type", required = false) String weaponType,
+                                               @RequestParam(name = "weapon", required = false) String weapon) {
+        System.out.println(search);
+        System.out.println(weaponType);
+        System.out.println(weapon);
+        return ResponseEntity.ok(skinService.findAll(PageRequest.of(page, count), search, weaponType, weapon));
     }
-
-    @GetMapping(params = {"rarity"})
-    public ResponseEntity<List<Skin>> getAllSkinsByRarity(@PathVariable String rarity) {
-        return ResponseEntity.ok(skinService.findAllByRarity(rarity));
-    }
-
-    @GetMapping(params = {"weapon"})
-    public ResponseEntity<List<Skin>> getAllSkinsByWeapon(@PathVariable String weapon) {
-        return ResponseEntity.ok(skinService.findAllByWeapon(weapon));
-    }
-
-    @GetMapping(params = {"id"})
-    public ResponseEntity<List<Skin>> getFavorites(@PathVariable int id) {
-        return ResponseEntity.ok(skinService.getFavorites(id));
-    }
-
-    @PostMapping(params = {"id"})
-    public ResponseEntity<Skin> addFavorite(@PathVariable int id) {
-        return ResponseEntity.ok(skinService.addFavorite(id));
-    }
-
-    @DeleteMapping(params = {"id"})
-    public ResponseEntity<String> daleteFavorite(@PathVariable int id) {
-        return ResponseEntity.ok(skinService.removeFavorite(id) ? "Скін з id: " + id + " видалено з улюблених" : "Не видалено");
-    }
-
 }

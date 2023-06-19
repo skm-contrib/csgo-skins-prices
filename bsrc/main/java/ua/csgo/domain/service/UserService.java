@@ -1,6 +1,7 @@
 package ua.csgo.domain.service;
 
 import ua.csgo.domain.model.User;
+import ua.csgo.web.dto.UserDTORequest;
 
 import java.util.List;
 
@@ -10,10 +11,9 @@ public interface UserService {
 
     List<User> findAll();
 
-    User add(User user);
+    User add(UserDTORequest user);
 
-    User update(User user, int id);
+    User update(UserDTORequest user, int id);
 
     boolean delete(int id);
-
 }
