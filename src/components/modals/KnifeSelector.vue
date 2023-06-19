@@ -1,6 +1,6 @@
 <template>
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Bayonet' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Bayonet' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -11,7 +11,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Bowie Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Bowie Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -24,7 +24,7 @@
   <RouterLink
     :to="{
       name: 'Weapon',
-      params: { type: 'knifes', name: 'Butterfly Knife' },
+      params: { type: 'knifes', name: 'weapon=Butterfly Knife' },
     }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
@@ -36,7 +36,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Classic Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Classic Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -47,7 +47,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Falchion Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Falchion Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -58,7 +58,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Flip Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Flip Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -69,7 +69,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Gut Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Gut Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -80,7 +80,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Huntsman Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Huntsman Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -91,18 +91,18 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Karambit' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Karambit' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-karambit-stock.webp"
+      src="@/images/guns/knifes/Csgo-knife-karambit-stock.webp"
       alt=""
     />
     <p class="text-lg">Karambit</p></RouterLink
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'M9 Bayonet' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=M9 Bayonet' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -113,7 +113,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Navaja Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Navaja Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -124,7 +124,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Nomad Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Nomad Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -135,7 +135,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Paracord Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Paracord Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -146,7 +146,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Shadow Daggers' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Shadow Daggers' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -157,7 +157,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Skeleton Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Skeleton Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -168,7 +168,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Stiletto Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Stiletto Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -179,7 +179,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Survival Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Survival Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -190,7 +190,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Talon Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Talon Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -201,7 +201,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'knifes', name: 'Ursus Knife' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Ursus Knife' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"

@@ -7,7 +7,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'heavy', name: 'Nova' } }"
+    :to="{ name: 'Favorites' }"
     class="link flex flex-row items-center gap-4 px-4"
   >
     <p class="text-lg">Вподобані</p></RouterLink

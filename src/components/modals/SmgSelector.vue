@@ -1,6 +1,6 @@
 <template>
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'MAC-10' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=MAC-10' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -11,7 +11,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'MP5-SD' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=MP5-SD' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -22,7 +22,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'MP7' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=MP7' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -33,7 +33,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'MP9' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=MP9' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -44,7 +44,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'P90' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=P90' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -55,7 +55,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'PP-Bizon' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=PP-Bizon' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -66,7 +66,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'smgs', name: 'UMP-45' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=UMP-45' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"

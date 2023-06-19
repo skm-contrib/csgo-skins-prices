@@ -1,6 +1,6 @@
 <template>
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'CZ75-Auto' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=CZ75-Auto' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -10,7 +10,10 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'Desert Eagle' } }"
+    :to="{
+      name: 'TypeView',
+      params: { name: 'weapon=Desert Eagle' },
+    }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -20,7 +23,10 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'Dual Berettas' } }"
+    :to="{
+      name: 'TypeView',
+      params: { name: 'weapon=Dual Berettas' },
+    }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -30,7 +36,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'Five-SeveN' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Five-SeveN' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -40,7 +46,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'Glock-18' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Glock-18' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -50,7 +56,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'P2000' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=P2000' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -60,7 +66,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'P250' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=P250' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -70,7 +76,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'R8 Revolver' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=R8 Revolver' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -80,7 +86,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'Tec-9' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Tec-9' } }"
     class="link flex flex-row items-center gap-4 px-4"
   >
     <img
@@ -91,7 +97,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'pistols', name: 'USP-S' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=USP-S' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"

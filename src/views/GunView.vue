@@ -22,8 +22,8 @@
           <p class="text-neutral-300 italic font-light pb-4">
             {{ skin.description }}
           </p>
-          <p>Minimal float: {{ skin.min_float }}</p>
-          <p>Maximail float: {{ skin.max_float }}</p>
+          <p>Minimal float: {{ skin.minFloat }}</p>
+          <p>Maximail float: {{ skin.maxFloat }}</p>
           <p class="text-xl">
             Rarity:
             <span
@@ -69,7 +69,7 @@
               >{{ skin.rarity }}</span
             >
           </p>
-          <p>Paint index: {{ skin.paint_index }}</p>
+          <p>Paint index: {{ skin.paintIndex }}</p>
         </div>
       </div>
       <div class="duration-300 cursor-pointer">
@@ -79,26 +79,125 @@
           ♡
         </p>
       </div>
+      <div v-if="chartData.datasets[0].data">
+        <Line
+          class="text-white font-bold"
+          v-if="loaded"
+          id="my-chart-id"
+          :options="chartOptions"
+          :key="chartData"
+          ref="myChart"
+          :data="chartData"
+        />
+      </div>
     </div>
   </div>
 </template>
-
 <script setup>
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "vue-chartjs";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 import { ref, watch, reactive, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
 import jsonCompose from "../composables/jsonrequster";
 const route = useRoute();
-const { skin, prices, getAllSkins, getSkinByName, getAllSkinsByType } =
-  jsonCompose();
 
-onMounted(() => {
-  getSkinByName(route.params.name);
+const {
+  skin,
+  prices,
+  getSkinById,
+  getAllSkins,
+  getSkinByName,
+  getAllSkinsByType,
+} = jsonCompose();
+
+const chartData = reactive({
+  labels: [],
+  datasets: [
+    {
+      label: "Цінова активність",
+      backgroundColor: "#4cba75",
+      data: "",
+    },
+  ],
+});
+const chartOptions = ref({
+  responsive: true,
+});
+const loaded = ref(false);
+const pricesRange = computed(() => {
+  return [chartData.datasets[0].data];
 });
 
-watch(
-  () => route.params,
-  () => {
-    getSkinByName(route.params.name);
+const labels = computed(() => {
+  return [chartData.labels];
+});
+
+const buildChart = async () => {
+  console.log(chartData);
+  pricesRange.value.splice(0, 1);
+  labels.value.splice(0, 1);
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")} ${date
+      .getHours()
+      .toString()
+      .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}:${date
+      .getSeconds()
+      .toString()
+      .padStart(2, "0")}`;
+    return formattedDate;
+  };
+  skin.value.skinPrices.forEach((priceRow) => {
+    const formattedDate = formatDate(priceRow.timestamp);
+    labels.value.push(formattedDate);
+
+    //chartData.value.labels.push(priceRow.timestamp);
+  });
+  chartData.labels = labels.value;
+
+  try {
+    skin.value.skinPrices.forEach((priceRow) => {
+      pricesRange.value.push(priceRow.price);
+    });
+    chartData.datasets[0].data = pricesRange.value;
+  } catch (err) {
+    console.log(err);
   }
-);
+
+  console.log(chartData);
+};
+
+onMounted(async () => {
+  await getSkinById(route.params.id);
+  await buildChart();
+  loaded.value = true;
+});
+//watch(
+//  () => route.params,
+//  () => {
+//    getSkinById(route.params.id);
+//  }
+//);
 </script>

@@ -2,7 +2,7 @@
   <p class="m-2">Assault</p>
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'AK-47' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=AK-47' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -13,7 +13,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'AUG' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=AUG' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -24,7 +24,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'FAMAS' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=FAMAS' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -35,7 +35,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'Galil AR' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=Galil AR' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -46,7 +46,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'M4A1-S' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=M4A1-S' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -57,7 +57,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'M4A4' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=M4A4' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -68,7 +68,7 @@
   >
 
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'SG 553' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=SG 553' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -79,7 +79,7 @@
   >
   <p class="m-2">Sniper</p>
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'AWP' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=AWP' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -89,7 +89,7 @@
     <p class="text-lg">AWP</p></RouterLink
   >
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'G3SG1' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=G3SG1' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -99,7 +99,7 @@
     <p class="text-lg">G3SG1</p></RouterLink
   >
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'SCAR-20' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=SCAR-20' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
@@ -109,7 +109,7 @@
     <p class="text-lg">SCAR-20</p></RouterLink
   >
   <RouterLink
-    :to="{ name: 'Weapon', params: { type: 'rifles', name: 'SSG 08' } }"
+    :to="{ name: 'TypeView', params: { name: 'weapon=SSG 08' } }"
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"

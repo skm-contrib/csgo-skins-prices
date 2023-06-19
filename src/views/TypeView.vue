@@ -97,7 +97,7 @@ const goToPreviousPage = () => {
   changePage();
 };
 const changePage = async () => {
-  await getAllSkinsByWeapon(route.params.type, pageNumber);
+  await getAllSkinsByWeapon(route.params.name, pageNumber);
 };
 
 const goToLastPage = () => {
@@ -119,13 +119,13 @@ const goToPage = (page) => {
 };
 
 const updatePageSkins = async () => {
-  await getAllSkinsByWeapon(route.params.type);
+  await getAllSkinsByWeapon(route.params.name);
   await getAllPages();
 };
 
 onMounted(async () => {
   await getSkinsCount();
-  await getAllSkinsByWeapon(route.params.type);
+  await getAllSkinsByWeapon(route.params.name);
   await changePage();
   await getAllPages();
 });
