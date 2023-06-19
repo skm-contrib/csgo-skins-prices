@@ -1,5 +1,7 @@
 package ua.csgo.domain.factory;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import ua.csgo.domain.model.User;
 import ua.csgo.web.dto.AuthDTO;
@@ -7,7 +9,10 @@ import ua.csgo.web.dto.UserDTORequest;
 import ua.csgo.web.dto.UserDTOResponse;
 
 @Component
+@RequiredArgsConstructor
 public class UserFactory {
+
+    private final PasswordEncoder passwordEncoder;
 
     public User fromDto(UserDTORequest request) {
         return User.builder()
@@ -21,7 +26,8 @@ public class UserFactory {
     public User fromDto(AuthDTO authDTO) {
         return User.builder()
                 .email(authDTO.getEmail())
-                .password(authDTO.getPassword())
+                .password(passwordEncoder.encode(authDTO.getPassword()))
+                .role("ROLE_USER")
                 .build();
     }
 
