@@ -19,9 +19,11 @@ import java.util.Map;
 public class ExceptionControllerAdvice {
 
     @ExceptionHandler({UserAlreadyRegisteredException.class})
-    public ResponseEntity<String> handleUserAlreadyRegisteredException(UserAlreadyRegisteredException e) {
+    public ResponseEntity<String[]> handleUserAlreadyRegisteredException(UserAlreadyRegisteredException e) {
+        String[] error = new String[1];
+        error[0] = e.getMessage();
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE)
-                .body(e.getMessage());
+                .body(error);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
