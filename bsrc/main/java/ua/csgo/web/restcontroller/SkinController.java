@@ -34,4 +34,9 @@ public class SkinController {
     public ResponseEntity<Skin> getSkin(@PathVariable String id){
         return ResponseEntity.ok(skinService.findById(id));
     }
+
+    @GetMapping("/count")
+    public ResponseEntity<Long> getCountOfSkins(){
+        return ResponseEntity.ok(skinService.count());
+    }
 }
