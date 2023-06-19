@@ -28,4 +28,7 @@ public interface SkinRepository extends JpaRepository<Skin, String> {
             "and (s.weapon = :weapon or :weapon is null)" +
             "and (s.name like concat('%', :search, '%') or :search is null)")
     long count(String search, String weapon, String weaponType);
+
+    @Query("SELECT CASE WHEN COUNT(s) > 0 THEN true ELSE false END FROM User u JOIN u.favorites s WHERE u.id = :id AND s.skinId = :skinId")
+    boolean isSkinInFavorites(int id, String skinId);
 }
