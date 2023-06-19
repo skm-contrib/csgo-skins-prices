@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @ControllerAdvice
 public class ExceptionControllerAdvice {
@@ -23,15 +25,12 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<List<ValidationError>> handleValidationException(MethodArgumentNotValidException exception) {
-        List<ValidationError> errors = new ArrayList<>();
+    public ResponseEntity<Map<String, List<String>>> handleValidationException(MethodArgumentNotValidException exception) {
         List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
+        Map<String, List<String>> errors = new HashMap<>();
 
         for (FieldError fieldError : fieldErrors) {
-            ValidationError error = new ValidationError();
-            error.setField(fieldError.getField());
-            error.setMessage(fieldError.getDefaultMessage());
-            errors.add(error);
+            errors.getOrDefault(fieldError.getField(), new ArrayList<>()).add(fieldError.getDefaultMessage());
         }
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
