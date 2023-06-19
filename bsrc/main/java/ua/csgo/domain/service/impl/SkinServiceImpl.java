@@ -1,7 +1,9 @@
 package ua.csgo.domain.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ua.csgo.domain.model.Skin;
 import ua.csgo.domain.repository.SkinRepository;
@@ -26,13 +28,14 @@ public class SkinServiceImpl implements SkinService {
         return repository.findAll();
     }
 
-    public List<Skin> findAll(Pageable page, String search, String weaponType, String weapon) {
-        return repository.findAll(page, search, weaponType, weaponType);
-    }
-
     @Override
     public long count() {
         return repository.count();
+    }
+
+    @Override
+    public List<Skin> findAll(PageRequest of, String weaponType, String weapon, String search, Sort skinSort) {
+        return repository.findAll(of, weaponType, weapon, search, skinSort);
     }
 
 }
