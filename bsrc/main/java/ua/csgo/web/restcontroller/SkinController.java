@@ -2,10 +2,7 @@ package ua.csgo.web.restcontroller;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ua.csgo.domain.model.Skin;
 import ua.csgo.domain.service.SkinService;
 
@@ -31,5 +28,10 @@ public class SkinController {
         System.out.println(weaponType);
         System.out.println(weapon);
         return ResponseEntity.ok(skinService.findAll(PageRequest.of(page, count), search, weaponType, weapon));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Skin> getSkin(@PathVariable String id){
+        return ResponseEntity.ok(skinService.findById(id));
     }
 }
