@@ -8,6 +8,7 @@ import ua.csgo.domain.model.User;
 import ua.csgo.domain.repository.UserRepository;
 import ua.csgo.domain.service.AuthService;
 import ua.csgo.web.dto.AuthDTO;
+import ua.csgo.web.dto.RegisterDTO;
 import ua.csgo.web.dto.UserDTOResponse;
 import ua.csgo.web.exception.UserAlreadyRegisteredException;
 
@@ -19,7 +20,7 @@ public class AuthServiceImpl implements AuthService {
     private final UserFactory userFactory;
 
     @Override
-    public UserDTOResponse signup(AuthDTO signup) {
+    public UserDTOResponse signup(RegisterDTO signup) {
         if (userRepository.existsByEmail(signup.getEmail()))
             throw new UserAlreadyRegisteredException("Ця електронна пошта вже зайнята");
 
