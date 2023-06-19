@@ -10,6 +10,7 @@ import ua.csgo.domain.model.User;
 import ua.csgo.domain.service.AuthService;
 import ua.csgo.web.dto.AuthDTO;
 import ua.csgo.web.dto.UserDTORequest;
+import ua.csgo.web.dto.UserDTOResponse;
 
 @RestController
 @RequestMapping("/auth")
@@ -19,12 +20,12 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<User> authenticate(@Valid AuthDTO authDTO){
+    public ResponseEntity<UserDTOResponse> authenticate(@Valid AuthDTO authDTO){
         return ResponseEntity.ok(authService.login(authDTO));
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<User> signup(@Valid AuthDTO authDTO){
+    public ResponseEntity<UserDTOResponse> signup(@Valid AuthDTO authDTO){
         return ResponseEntity.ok(authService.signup(authDTO));
     }
 

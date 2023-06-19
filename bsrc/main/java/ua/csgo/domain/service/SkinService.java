@@ -11,9 +11,9 @@ public interface SkinService {
     Skin findById(String id);
 
     List<Skin> findAll();
+    long count(String search,  String weapon, String weaponType);
 
 
-    long count();
 
     List<Skin> findAll(PageRequest of, String weaponType, String weapon, String search, Sort skinSort);
 }

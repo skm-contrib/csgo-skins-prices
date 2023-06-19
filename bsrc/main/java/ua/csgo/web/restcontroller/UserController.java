@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import ua.csgo.domain.model.User;
 import ua.csgo.domain.service.UserService;
 import ua.csgo.web.dto.UserDTORequest;
+import ua.csgo.web.dto.UserDTOResponse;
 
 import java.util.List;
 
@@ -19,17 +20,17 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<UserDTOResponse>> getAllUsers() {
         return ResponseEntity.ok(userService.findAll());
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody UserDTORequest user) {
+    public ResponseEntity<UserDTOResponse> addUser(@RequestBody UserDTORequest user) {
         return ResponseEntity.ok(userService.add(user));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@RequestBody UserDTORequest user, @PathVariable int id) {
+    public ResponseEntity<UserDTOResponse> updateUser(@RequestBody UserDTORequest user, @PathVariable int id) {
         return ResponseEntity.ok(userService.update(user, id));
     }
 

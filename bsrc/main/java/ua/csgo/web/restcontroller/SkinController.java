@@ -36,13 +36,15 @@ public class SkinController {
         return ResponseEntity.ok(skinService.findAll(PageRequest.of(page, count), weaponType, weapon, search, skinSort));
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> getSkinsCount(@RequestParam(name = "weapon_type", required = false) String weaponType,
+                                               @RequestParam(name = "weapon", required = false) String weapon,
+                                               @RequestParam(name = "search", required = false) String search) {
+        return ResponseEntity.ok(skinService.count(search, weapon, weaponType));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Skin> getSkin(@PathVariable String id) {
         return ResponseEntity.ok(skinService.findById(id));
-    }
-
-    @GetMapping("/count")
-    public ResponseEntity<Long> getCountOfSkins() {
-        return ResponseEntity.ok(skinService.count());
     }
 }

@@ -29,8 +29,8 @@ public class SkinServiceImpl implements SkinService {
     }
 
     @Override
-    public long count() {
-        return repository.count();
+    public long count(String search, String weapon, String weaponType) {
+        return repository.count(search, weapon, weaponType);
     }
 
     @Override

@@ -8,6 +8,7 @@ import ua.csgo.domain.model.User;
 import ua.csgo.domain.repository.UserRepository;
 import ua.csgo.domain.service.UserService;
 import ua.csgo.web.dto.UserDTORequest;
+import ua.csgo.web.dto.UserDTOResponse;
 
 import java.util.List;
 
@@ -25,20 +26,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAll() {
-        return repository.findAll();
+    public List<UserDTOResponse> findAll() {
+        return repository.findAll().stream().map(userFactory::toDto).toList();
     }
 
     @Override
-    public User add(UserDTORequest user) {
-        return repository.save(userFactory.fromDto(user));
+    public UserDTOResponse add(UserDTORequest user) {
+        return userFactory.toDto(repository.save(userFactory.fromDto(user)));
     }
 
     @Override
-    public User update(UserDTORequest user, int id) {
+    public UserDTOResponse update(UserDTORequest user, int id) {
         checkExists(id);
-
-        return repository.save(userFactory.fromDto(user));
+        User userToSave = userFactory.fromDto(user);
+        userToSave.setId(id);
+        return userFactory.toDto(repository.save(userToSave));
     }
 
     @Override
