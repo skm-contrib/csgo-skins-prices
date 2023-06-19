@@ -24,7 +24,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public User login(UserDTORequest login) {
-
+        User user = userRepository.findByEmailAndPassword(login.getEmail(), login.getPassword());
         return null;
     }
 }
