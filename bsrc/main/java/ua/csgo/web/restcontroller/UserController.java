@@ -24,6 +24,11 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTOResponse> getUserById(@PathVariable int id){
+        return ResponseEntity.ok(userService.findById(id));
+    }
+
     @PostMapping
     public ResponseEntity<UserDTOResponse> addUser(@RequestBody UserDTORequest user) {
         return ResponseEntity.ok(userService.add(user));

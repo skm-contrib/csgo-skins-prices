@@ -21,8 +21,8 @@ public class UserServiceImpl implements UserService {
     private final UserFactory userFactory;
 
     @Override
-    public User findById(int id) {
-        return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Не можливо знайти користувача з id: " + id));
+    public UserDTOResponse findById(int id) {
+        return userFactory.toDto(repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Не можливо знайти користувача з id: " + id)));
     }
 
     @Override
