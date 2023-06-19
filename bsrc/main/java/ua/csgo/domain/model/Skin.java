@@ -17,10 +17,12 @@ import java.util.List;
 @Table(name = "skins")
 public class Skin {
     @Id
-    @Column(name = "skin_id")
+    @Column(name = "skin_id", columnDefinition = "TEXT")
     private String skinId;
     private String id;
+    @Column(columnDefinition = "TEXT")
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String weapon;
     private String pattern;
