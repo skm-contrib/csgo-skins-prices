@@ -21,4 +21,11 @@ public interface SkinRepository extends JpaRepository<Skin, String> {
             "and (s.weapon = :weapon or :weapon is null)" +
             "and (s.name like concat('%', :search, '%') or :search is null)")
     List<Skin> findAll(PageRequest of, String weaponType, String weapon, String search, Sort sort);
+
+    @Query("select count(s) " +
+            "from Skin s " +
+            "where (s.weaponType = :weaponType or :weaponType is null)" +
+            "and (s.weapon = :weapon or :weapon is null)" +
+            "and (s.name like concat('%', :search, '%') or :search is null)")
+    long count(String search, String weapon, String weaponType);
 }

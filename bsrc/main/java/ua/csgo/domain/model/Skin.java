@@ -1,5 +1,6 @@
 package ua.csgo.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -44,7 +45,7 @@ public class Skin {
     @Column(name = "weapon_type")
     private String weaponType;
     @ManyToMany(mappedBy = "favorites")
-    @JsonIgnoreProperties("favorites")
+    @JsonIgnore
     private List<User> users;
 
     @OneToMany(mappedBy = "skin")
