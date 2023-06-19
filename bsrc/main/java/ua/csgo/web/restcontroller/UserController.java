@@ -1,5 +1,6 @@
 package ua.csgo.web.restcontroller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.csgo.domain.model.User;
@@ -30,12 +31,12 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDTOResponse> addUser(@RequestBody UserDTORequest user) {
+    public ResponseEntity<UserDTOResponse> addUser(@RequestBody @Valid UserDTORequest user) {
         return ResponseEntity.ok(userService.add(user));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDTOResponse> updateUser(@RequestBody UserDTORequest user, @PathVariable int id) {
+    public ResponseEntity<UserDTOResponse> updateUser(@RequestBody @Valid UserDTORequest user, @PathVariable int id) {
         return ResponseEntity.ok(userService.update(user, id));
     }
 
