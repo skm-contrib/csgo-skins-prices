@@ -14,7 +14,7 @@
         </h2><div class="flex" v-if="skin.stattrak">
             <img
               class="h-16"
-              src="../../../../../../../../../public/images/service/StatTrak.webp"
+              src="../../../../public/images/service/StatTrak.webp"
               alt=""
             />
           </div></div>
