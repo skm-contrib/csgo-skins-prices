@@ -4,7 +4,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/pistols/CSGO_CZ75-Auto_Inventory.webp"
+      src="../../../public/images/guns/pistols/CSGO_CZ75-Auto_Inventory.webp"
       alt=""
     />CZ75-Auto</RouterLink
   >
