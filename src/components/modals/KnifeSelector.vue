@@ -4,7 +4,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-bayonet-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-bayonet-stock.webp"
       alt=""
     />
     <p class="text-lg">Bayonet</p></RouterLink
@@ -15,7 +15,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-weapon_knife_survival_bowie.webp"
+      src="../../../public/images/guns/knifes/Csgo-weapon_knife_survival_bowie.webp"
       alt=""
     />
     <p class="text-lg">Bowie Knife</p></RouterLink
@@ -29,7 +29,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-butterfly-stock-market.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-butterfly-stock-market.webp"
       alt=""
     />
     <p class="text-lg">Butterfly Knife</p></RouterLink
@@ -40,7 +40,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_css_inventory.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_css_inventory.webp"
       alt=""
     />
     <p class="text-lg">Classic Knife</p></RouterLink
@@ -51,7 +51,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-falchion-knife-market.webp"
+      src="../../../public/images/guns/knifes/Csgo-falchion-knife-market.webp"
       alt=""
     />
     <p class="text-lg">Falchion Knife</p></RouterLink
@@ -62,7 +62,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-flip-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-flip-stock.webp"
       alt=""
     />
     <p class="text-lg">Flip Knife</p></RouterLink
@@ -73,7 +73,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-gut-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-gut-stock.webp"
       alt=""
     />
     <p class="text-lg">Gut Knife</p></RouterLink
@@ -84,7 +84,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-huntsman-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-huntsman-stock.webp"
       alt=""
     />
     <p class="text-lg">Huntsman Knife</p></RouterLink
@@ -106,7 +106,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-m9-bayonet-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-m9-bayonet-stock.webp"
       alt=""
     />
     <p class="text-lg">M9 Bayonet</p></RouterLink
@@ -117,7 +117,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_gypsy_jackknife.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_gypsy_jackknife.webp"
       alt=""
     />
     <p class="text-lg">Navaja Knife</p></RouterLink
@@ -128,7 +128,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_outdoor.fdb3ce5ceef1584781759ef5a7bd6f819bf12e9b.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_outdoor.fdb3ce5ceef1584781759ef5a7bd6f819bf12e9b.webp"
       alt=""
     />
     <p class="text-lg">Nomad Knife</p></RouterLink
@@ -139,7 +139,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Paracord_knife.webp"
+      src="../../../public/images/guns/knifes/Paracord_knife.webp"
       alt=""
     />
     <p class="text-lg">Paracord Knife</p></RouterLink
@@ -150,7 +150,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Csgo-knife-shadow-daggers-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-shadow-daggers-stock.webp"
       alt=""
     />
     <p class="text-lg">Shadow Daggers</p></RouterLink
@@ -161,7 +161,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_skeleton.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_skeleton.webp"
       alt=""
     />
     <p class="text-lg">Skeleton Knife</p></RouterLink
@@ -172,7 +172,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_stiletto.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_stiletto.webp"
       alt=""
     />
     <p class="text-lg">Stiletto Knife</p></RouterLink
@@ -183,7 +183,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Survival_Knife.webp"
+      src="../../../public/images/guns/knifes/Survival_Knife.webp"
       alt=""
     />
     <p class="text-lg">Survival Knife</p></RouterLink
@@ -194,7 +194,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_widowmaker.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_widowmaker.webp"
       alt=""
     />
     <p class="text-lg">Talon Knife</p></RouterLink
@@ -205,7 +205,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/knifes/Weapon_knife_ursus.webp"
+      src="../../../public/images/guns/knifes/Weapon_knife_ursus.webp"
       alt=""
     />
     <p class="text-lg">Ursus Knife</p></RouterLink

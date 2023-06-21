@@ -4,7 +4,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_MAC-10_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_MAC-10_Inventory.webp"
       alt=""
     />
     <p class="text-lg">MAC-10</p></RouterLink
@@ -15,7 +15,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_MP5-SD_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_MP5-SD_Inventory.webp"
       alt=""
     />
     <p class="text-lg">MP5-SD</p></RouterLink
@@ -26,7 +26,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_MP7_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_MP7_Inventory.webp"
       alt=""
     />
     <p class="text-lg">MP7</p></RouterLink
@@ -37,7 +37,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_MP9_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_MP9_Inventory.webp"
       alt=""
     />
     <p class="text-lg">MP9</p></RouterLink
@@ -48,7 +48,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_P90_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_P90_Inventory.webp"
       alt=""
     />
     <p class="text-lg">P90</p></RouterLink
@@ -59,7 +59,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_PP-Bizon_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_PP-Bizon_Inventory.webp"
       alt=""
     />
     <p class="text-lg">PP-Bizon</p></RouterLink
@@ -70,7 +70,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../../../../../../../public/images/guns/smg//CSGO_UMP-45_Inventory.webp"
+      src="../../../public/images/guns/smg//CSGO_UMP-45_Inventory.webp"
       alt=""
     />
     <p class="text-lg">UMP-45</p></RouterLink
