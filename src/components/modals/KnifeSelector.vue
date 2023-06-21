@@ -95,7 +95,7 @@
     class="link flex flex-row items-center gap-4 px-4"
     ><img
       class="h-12"
-      src="../../../images/guns/knifes/Csgo-knife-karambit-stock.webp"
+      src="../../../public/images/guns/knifes/Csgo-knife-karambit-stock.webp"
       alt=""
     />
     <p class="text-lg">Karambit</p></RouterLink
