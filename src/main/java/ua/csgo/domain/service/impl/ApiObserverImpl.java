@@ -13,9 +13,8 @@ import ua.csgo.domain.repository.SkinPriceRepository;
 import ua.csgo.domain.repository.SkinRepository;
 import ua.csgo.domain.service.ApiObserver;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Component
 public class ApiObserverImpl implements ApiObserver {
@@ -61,5 +60,21 @@ public class ApiObserverImpl implements ApiObserver {
 
         skinRepository.saveAll(skins);
         skinPriceRepository.saveAll(skinPrices);
+    }
+
+    private List<Skin> findSkins(List<Skin> skins) {
+        Map<String, List<Skin>> sortedSkins = new HashMap<>();
+
+        for (Skin skin : skins) {
+            List<Skin> currentSkins = sortedSkins.getOrDefault(skin.getWeapon(), new ArrayList<>());
+            if (currentSkins.size() < 11) {
+                currentSkins.add(skin);
+            }
+            sortedSkins.put(skin.getWeapon(), currentSkins);
+        }
+
+        return sortedSkins.values().stream()
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
     }
 }
