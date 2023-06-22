@@ -26,6 +26,7 @@ public class WeaponTypeResolverImpl implements WeaponTypeResolver {
 
     @Override
     public String resolveWeaponType(String weaponName) {
+        if (weaponName == null) return "";
         Set<List<String>> keys = weaponTypes.keySet();
         for (List<String> weapons : keys) {
             if (weapons.contains(weaponName))
