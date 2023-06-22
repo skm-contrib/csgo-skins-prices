@@ -33,8 +33,8 @@ export default {
 </script>
 
 <template>
-  <div class="w-2/3 m-auto">
-    <div class="grid grid-cols-4 gap-4">
+  <div class="sm:w-2/3 m-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
       <SkinCard v-for="skin in propSkins" :skin="skin"></SkinCard>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col m-auto w-2/3">
+  <div class="flex flex-col m-auto sm:w-2/3">
     <div
-      class="flex flex-col w-1/3 m-auto gap-2 backdrop-blur-lg bg-opacity-25 p-12 rounded-xl border-palette-200 border-2"
+      class="flex flex-col sm:w-1/3 m-auto gap-2 backdrop-blur-lg bg-opacity-25 p-12 rounded-xl border-palette-200 border-2"
     >
       <h1 class="text-center text-3xl font-bold text-white">Авторизація</h1>
       <label class="text-white pt-4" for="email">Електронна пошта</label>

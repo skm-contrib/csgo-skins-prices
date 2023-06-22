@@ -72,10 +72,17 @@ onMounted(async () => {
 
 <template>
   <div class="flex flex-col relative">
-    <div
-      class="w-2/3 z-50 m-auto backdrop-blur-lg bg-opacity-25 font-bold bg-palette-300 flex text-palette-100 flex-row justify-between items-center transition duration-300 rounded-b-xl"
+    <button
+      @click="openHeader"
+      class="text-white font-black text-4xl flex justify-start p-4 absolute"
     >
-      <div class="flex flex-row">
+      =
+    </button>
+    <div
+      v-if="showHeader"
+      class="sm:w-2/3 text-center z-50 m-auto w-full backdrop-blur-lg bg-opacity-25 font-bold bg-palette-300 flex text-palette-100 sm:flex-row flex-col sm:justify-between items-start sm:items-center transition duration-300 rounded-b-xl"
+    >
+      <div class="flex flex-col sm:flex-row">
         <div class="m-4">
           <RouterLink @click="resetSearch" class="p-4" to="/"
             >Головна</RouterLink
@@ -93,7 +100,7 @@ onMounted(async () => {
           >
 
           <div
-            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 top-12 sm:left-0 left-40 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showPistols"
           >
             <pistolSelector />
@@ -110,7 +117,7 @@ onMounted(async () => {
             >Рушниці</RouterLink
           >
           <div
-            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showRifles"
           >
             <rifleSelector />
@@ -127,7 +134,7 @@ onMounted(async () => {
             >СМГ</RouterLink
           >
           <div
-            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showSMG"
           >
             <smgSelector />
@@ -144,7 +151,7 @@ onMounted(async () => {
             >Тяжкі</RouterLink
           >
           <div
-            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showHeavy"
           >
             <heavySelector />
@@ -161,14 +168,14 @@ onMounted(async () => {
             >Ножі</RouterLink
           >
           <div
-            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showKnife"
           >
             <knifeSelector />
           </div>
         </div>
       </div>
-      <div class="font-medium text-black">
+      <div class="font-medium text-black w-full">
         <input
           type="text"
           class="p-2 rounded-l-xl focus:outline-none"
@@ -190,17 +197,23 @@ onMounted(async () => {
       >
         <div class="p-4">Акаунт</div>
         <div
-          class="absolute bg-palette-300 top-12 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-25 flex flex-col"
+          class="absolute bg-palette-300 sm:left-0 left-40 top-12 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-25 flex flex-col"
           v-if="showProfile"
         >
           <accountSelector />
         </div>
       </div>
+      <button
+        class="text-white font-black text-4xl flex justify-center text-center items-start w-full p-2"
+        @click="closeHeader"
+      >
+        X
+      </button>
     </div>
     <RouterView class="pt-12" :propSkins="skins" />
     <div
       v-if="route.name === 'home'"
-      class="flex mb-32 w-2/3 m-auto text-white gap-4 mt-4 text-3xl flex-row justify-between"
+      class="flex mb-12 sm:mb-32 sm:w-2/3 m-auto w-full text-white gap-4 mt-4 sm:text-3xl flex-row justify-between"
     >
       <div>
         <p
@@ -210,7 +223,7 @@ onMounted(async () => {
           Попередня
         </p>
       </div>
-      <div class="flex flex-row gap-12">
+      <div class="flex flex-row gap-2 text-white">
         <p
           class="cursor-pointer text-white hover:text-emerald-600 duration-300"
           v-for="page in 3"
@@ -220,10 +233,6 @@ onMounted(async () => {
           {{ page }}
         </p>
         <p>...</p>
-        <p class="cursor-pointer hover:text-emerald-600 duration-300">
-          {{ pageNumber + 1 }}
-        </p>
-        <p v-if="pageNumber >= 0">...</p>
         <p
           class="cursor-pointer hover:text-emerald-600 duration-300"
           @click="goToPage(allPages - 2)"
@@ -280,6 +289,8 @@ export default {
       showHeavy: false,
       showKnife: false,
       showProfile: false,
+
+      showHeader: true,
     };
   },
   components: {
@@ -289,6 +300,14 @@ export default {
     heavySelector,
     knifeSelector,
     accountSelector,
+  },
+  methods: {
+    closeHeader() {
+      this.showHeader = false;
+    },
+    openHeader() {
+      this.showHeader = true;
+    },
   },
 };
 </script>

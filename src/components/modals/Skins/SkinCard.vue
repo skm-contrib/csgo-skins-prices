@@ -7,8 +7,8 @@
         }"
 
         >
-        <div class="flex flex-row justify-between p-4 items-center">
-            <h2 class="text-palette-100 text-3xl font-bold">
+        <div class="flex flex-row justify-between p-2 sm:p-4 items-center">
+            <h2 class="text-palette-100 text-xl sm:text-3xl font-bold">
           {{ skin.pattern }}
 
         </h2><div class="flex" v-if="skin.stattrak">
@@ -18,11 +18,11 @@
               alt=""
             />
           </div></div>
-        <h3 class="text-palette-100 text-xl px-4 font-bold opacity-60">{{ skin.name.match(/\((.*?)\)/)[1] }}</h3>
-        <h3 class="text-palette-100 px-4 opacity-30">
+        <h3 class="text-palette-100 sm:text-xl px-2 sm:px-4 font-bold opacity-60">{{ skin.name.match(/\((.*?)\)/)[1] }}</h3>
+        <h3 class="text-palette-100 px-2 sm:px-4 opacity-30">
           {{ skin.weapon }}
         </h3>
-        <p class="text-sm px-4">
+        <p class="text-sm px-2 sm:px-4">
           <span
             v-if="skin.rarity == `Consumer Grade`"
             class="text-blue-400 font-bold"
@@ -156,10 +156,11 @@
 
           </div>
         </div>
-      </RouterLink><div class="cursor-pointer" @click="addSkinToFavourites">
+      </RouterLink>
+      <div class="cursor-pointer" @click="addSkinToFavourites">
         <svg :class="[isInFav ? 'bg-neutral-700 hover:bg-neutral-500 hover:fill-neutral-900 fill-neutral-200' :
-         'bg-neutral-200 hover:bg-neutral-500 hover:fill-neutral-200']" class=" h-12 w-full p-2 shadow-xl font-black
-              rounded-xl text-center hover:text-neutral-200 duration-300 text-4xl " fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         'bg-neutral-200 hover:bg-neutral-500 hover:fill-neutral-200']" class="h-8 sm:h-12 w-full p-2 shadow-xl font-black
+              rounded-xl text-center hover:text-neutral-200 duration-300 sm:text-4xl " fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 viewBox="0 0 369.486 369.486"
 	 xml:space="preserve">
 <g>

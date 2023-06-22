@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col m-auto gap-4 w-2/3">
+  <div class="flex flex-col m-auto gap-4 sm:w-2/3">
     <div
-      class="flex justify-between items-center text-white text-2xl p-2 rounded-xl backdrop-blur-xl bg-opacity-10 border-2 border-neutral-400 flex-row bg-neutral-200"
+      class="flex sm:justify-between gap-4 justify-center items-center text-white text-2xl p-2 rounded-xl backdrop-blur-xl bg-opacity-10 border-2 border-neutral-400 flex-col sm:flex-row bg-neutral-200"
       v-for="user in users"
       :key="user.id"
     >
