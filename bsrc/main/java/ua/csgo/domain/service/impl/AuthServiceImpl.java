@@ -33,7 +33,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public UserDTOResponse login(AuthDTO login) {
         User user = userRepository.findByEmail(login.getEmail()).orElseThrow(() -> new EntityNotFoundException("Неправильний логін або пароль"));
-        if (passwordEncoder.matches(login.getPassword(), user.getPassword()))
+        if (!passwordEncoder.matches(login.getPassword(), user.getPassword()))
             throw new EntityNotFoundException("Неправильний логін або пароль");
 
         return userFactory.toDto(user);
