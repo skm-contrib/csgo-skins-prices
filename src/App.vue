@@ -74,7 +74,7 @@ onMounted(async () => {
   <div class="flex flex-col relative">
     <button
       @click="openHeader"
-      class="text-white font-black text-4xl flex justify-start p-4 absolute"
+      class="text-white sm:hidden visible font-black text-4xl flex justify-start p-4 absolute"
     >
       =
     </button>
@@ -204,7 +204,7 @@ onMounted(async () => {
         </div>
       </div>
       <button
-        class="text-white font-black text-4xl flex justify-center text-center items-start w-full p-2"
+        class="text-white sm:hidden visible font-black text-4xl flex justify-center text-center items-start w-full p-2"
         @click="closeHeader"
       >
         X
