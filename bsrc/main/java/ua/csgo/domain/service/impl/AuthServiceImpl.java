@@ -2,6 +2,8 @@ package ua.csgo.domain.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import ua.csgo.domain.factory.UserFactory;
 import ua.csgo.domain.model.User;
@@ -18,6 +20,7 @@ public class AuthServiceImpl implements AuthService {
 
     private final UserRepository userRepository;
     private final UserFactory userFactory;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDTOResponse signup(RegisterDTO signup) {
@@ -29,7 +32,10 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public UserDTOResponse login(AuthDTO login) {
-        return userFactory.toDto(userRepository.findByEmailAndPassword(login.getEmail(), login.getPassword())
-                .orElseThrow(() -> new EntityNotFoundException("Неправильний логін або пароль")));
+        User user = userRepository.findByEmail(login.getEmail()).orElseThrow(() -> new EntityNotFoundException("Неправильний логін або пароль"));
+        if (passwordEncoder.matches(login.getPassword(), user.getPassword()))
+            throw new EntityNotFoundException("Неправильний логін або пароль");
+
+        return userFactory.toDto(user);
     }
 }
