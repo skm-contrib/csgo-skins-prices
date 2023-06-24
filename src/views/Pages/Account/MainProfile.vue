@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto sm:w-2/3 w-full sm:mx-4">
+  <div class="m-auto sm:w-2/3 w-full">
     <div
       class="text-red-400 mx-4 font-black text-2xl"
       v-if="user.role == 'ROLE_ADMIN'"
