@@ -100,7 +100,7 @@ onMounted(async () => {
           >
 
           <div
-            class="absolute bg-palette-300 top-12 sm:left-0 left-40 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showPistols"
           >
             <pistolSelector />
@@ -117,7 +117,7 @@ onMounted(async () => {
             >Рушниці</RouterLink
           >
           <div
-            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showRifles"
           >
             <rifleSelector />
@@ -134,7 +134,7 @@ onMounted(async () => {
             >СМГ</RouterLink
           >
           <div
-            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showSMG"
           >
             <smgSelector />
@@ -151,7 +151,7 @@ onMounted(async () => {
             >Тяжкі</RouterLink
           >
           <div
-            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showHeavy"
           >
             <heavySelector />
@@ -168,7 +168,7 @@ onMounted(async () => {
             >Ножі</RouterLink
           >
           <div
-            class="absolute bg-palette-300 sm:left-0 left-40 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
+            class="absolute bg-palette-300 top-12 z-50 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-80 flex flex-col"
             v-if="showKnife"
           >
             <knifeSelector />
@@ -197,7 +197,7 @@ onMounted(async () => {
       >
         <div class="p-4">Акаунт</div>
         <div
-          class="absolute bg-palette-300 sm:left-0 left-40 top-12 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-25 flex flex-col"
+          class="absolute bg-palette-300 top-12 rounded-md shadow-2xl backdrop-blur-lg bg-opacity-25 flex flex-col"
           v-if="showProfile"
         >
           <accountSelector />
