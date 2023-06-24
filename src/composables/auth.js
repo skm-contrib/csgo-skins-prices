@@ -12,7 +12,7 @@ export default function jsonRequest() {
   const loginUser = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/v1/auth/login",
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/auth/login",
         data
       );
       user.value = response.data;
@@ -39,7 +39,7 @@ export default function jsonRequest() {
   const registerUser = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/v1/auth/signup",
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/auth/signup",
         data
       );
       user.value = response.data;
@@ -64,7 +64,7 @@ export default function jsonRequest() {
   const editUser = async (user) => {
     try {
       const response = await axios.put(
-        "http://localhost:9000/api/v1/users/" + user.id,
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/users/" + user.id,
         user
       );
       router.go();
@@ -80,7 +80,7 @@ export default function jsonRequest() {
     }
     try {
       const response = await axios.delete(
-        "http://localhost:9000/api/v1/users/" + id
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/users/" + id
       );
       localStorage.clear();
       router.push({ name: "Register" });
@@ -94,7 +94,7 @@ export default function jsonRequest() {
     try {
       let userId = localStorage.getItem("userId");
       const response = await axios.get(
-        "http://localhost:9000/api/v1/users/" + userId
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/users/" + userId
       );
       user.value = response.data;
     } catch (err) {
@@ -104,7 +104,7 @@ export default function jsonRequest() {
   const getUserById = async (id) => {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/v1/users/" + id
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/users/" + id
       );
       user.value = response.data;
     } catch (err) {
@@ -114,7 +114,9 @@ export default function jsonRequest() {
 
   const getUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:9000/api/v1/users");
+      const response = await axios.get(
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/users"
+      );
       users.value = response.data;
     } catch (err) {
       console.log(err);

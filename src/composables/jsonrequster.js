@@ -10,7 +10,7 @@ export default function jsonRequest() {
   const getAllSkins = async (page) => {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/v1/skins?page=" + page
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins?page=" + page
       );
       console.log(response);
       skins.value = response.data;
@@ -23,7 +23,7 @@ export default function jsonRequest() {
   const getSkinsCount = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/v1/skins/count"
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins/count"
       );
       skinsCount.value = response.data;
     } catch (err) {
@@ -34,7 +34,7 @@ export default function jsonRequest() {
   const getSkinById = async (id) => {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/v1/skins/" + id
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins/" + id
       );
       console.log(response);
       skin.value = response.data;
@@ -49,7 +49,7 @@ export default function jsonRequest() {
     }
     console.log(type);
     const response = await axios.get(
-      "http://localhost:9000/api/v1/skins?weapon_type=" +
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins?weapon_type=" +
         type +
         "&page=" +
         page_number
@@ -57,7 +57,8 @@ export default function jsonRequest() {
     skins.value = response.data;
 
     const count_response = await axios.get(
-      "http://localhost:9000/api/v1/skins/count?weapon_type=" + type
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins/count?weapon_type=" +
+        type
     );
     skinsCount.value = count_response.data;
   };
@@ -67,19 +68,23 @@ export default function jsonRequest() {
       page_number = 0;
     }
     const response = await axios.get(
-      "http://localhost:9000/api/v1/skins?" + weapon + "&page=" + page_number
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins?" +
+        weapon +
+        "&page=" +
+        page_number
     );
     skins.value = response.data;
 
     const count_response = await axios.get(
-      "http://localhost:9000/api/v1/skins/count?" + weapon
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins/count?" +
+        weapon
     );
     skinsCount.value = count_response.data;
   };
 
   const getSkinsByName = async (name, page_number) => {
     const response = await axios.get(
-      "http://localhost:9000/api/v1/skins?search=" +
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins?search=" +
         name +
         "&page=" +
         page_number
@@ -87,7 +92,8 @@ export default function jsonRequest() {
     skins.value = response.data;
 
     const count_response = await axios.get(
-      "http://localhost:9000/api/v1/skins/count?search=" + name
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/skins/count?search=" +
+        name
     );
     skinsCount.value = count_response.data;
   };
@@ -96,7 +102,10 @@ export default function jsonRequest() {
     console.log(user_id);
     console.log(skin_id);
     const response = await axios.post(
-      "http://localhost:9000/api/v1/favorites/" + user_id + "/" + skin_id
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/favorites/" +
+        user_id +
+        "/" +
+        skin_id
     );
     console.log(response.data);
   };
@@ -104,7 +113,10 @@ export default function jsonRequest() {
   const haveInFav = async (skin_id) => {
     let userId = localStorage.getItem("userId");
     const response = await axios.get(
-      "http://localhost:9000/api/v1/favorites/" + userId + "/" + skin_id
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/favorites/" +
+        userId +
+        "/" +
+        skin_id
     );
     return response.data;
   };
