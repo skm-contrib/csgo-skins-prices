@@ -111,14 +111,16 @@ export default function jsonRequest() {
   };
 
   const haveInFav = async (skin_id) => {
-    let userId = localStorage.getItem("userId");
-    const response = await axios.get(
-      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/favorites/" +
-        userId +
-        "/" +
-        skin_id
-    );
-    return response.data;
+    if (localStorage.getItem("userId")) {
+      let userId = localStorage.getItem("userId");
+      const response = await axios.get(
+        "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/favorites/" +
+          userId +
+          "/" +
+          skin_id
+      );
+      return response.data;
+    }
   };
 
   return {
