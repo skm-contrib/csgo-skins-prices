@@ -5,8 +5,8 @@
         <li v-for="gun in weaponsByType" :key="gun.name"></li>
       </ul>
     </div>
-    <div class="w-2/3 m-auto pt-12">
-      <div class="grid grid-cols-4 gap-4">
+    <div class="sm:w-2/3 m-auto pt-12">
+      <div class="grid sm:grid-cols-4 grid-cols-2 gap-4">
         <SkinCard v-for="skin in skins" :skin="skin"></SkinCard>
       </div>
       <div class="flex mb-32 gap-4 mt-4 text-3xl flex-row justify-between">
