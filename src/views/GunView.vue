@@ -179,14 +179,6 @@ const checkIsFavorite = async () => {
 };
 const chartOptions = ref({
   responsive: true,
-  animations: {
-    tension: {
-      duration: 200,
-      from: 500,
-      to: 0,
-      loop: true,
-    },
-  },
   plugins: {},
 });
 const loaded = ref(false);
