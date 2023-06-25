@@ -151,6 +151,7 @@ const {
   skin,
   prices,
   getSkinById,
+  removeFromFav,
   getAllSkins,
   addToFav,
   haveInFav,
@@ -165,6 +166,9 @@ const chartData = reactive({
       label: "Цінова активність",
       backgroundColor: "#4cba75",
       data: "",
+      fill: true,
+      borderColor: "rgb(200, 100, 200)",
+      tension: 0.1,
     },
   ],
 });
@@ -175,6 +179,15 @@ const checkIsFavorite = async () => {
 };
 const chartOptions = ref({
   responsive: true,
+  animations: {
+    tension: {
+      duration: 200,
+      from: 500,
+      to: 0,
+      loop: true,
+    },
+  },
+  plugins: {},
 });
 const loaded = ref(false);
 const pricesRange = computed(() => {
@@ -187,7 +200,12 @@ const labels = computed(() => {
 const addSkinToFavourites = async () => {
   if (loaded.value) {
     const token = localStorage.getItem("userId");
-    addToFav(token, skin.value.skinId);
+    if (isInFav.value) {
+      await removeFromFav(token, skin.value.skinId);
+    } else {
+      await addToFav(token, skin.value.skinId);
+    }
+    checkIsFavorite();
   }
 };
 const buildChart = async () => {

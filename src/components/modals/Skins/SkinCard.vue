@@ -193,7 +193,7 @@ export default {
 <script setup>
 import { onMounted, ref } from 'vue';
 import jsonRequest from '../../../composables/jsonrequster';
-const { addToFav, haveInFav } = jsonRequest();
+const { addToFav, haveInFav,removeFromFav } = jsonRequest();
 
 const props = defineProps ({
     skin: Object,
@@ -201,7 +201,14 @@ const props = defineProps ({
 
 const addSkinToFavourites = async () => {
     const token = localStorage.getItem("userId");
-    addToFav(token, props.skin.skinId);
+    if(isInFav.value)
+    {
+        await removeFromFav(token, props.skin.skinId);
+    }
+    else {
+        await addToFav(token, props.skin.skinId);
+    }
+    checkIsFavorite();
 }
 const isInFav = ref(false);
 

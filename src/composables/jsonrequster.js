@@ -109,6 +109,17 @@ export default function jsonRequest() {
     );
     console.log(response.data);
   };
+  const removeFromFav = async (user_id, skin_id) => {
+    console.log(user_id);
+    console.log(skin_id);
+    const response = await axios.delete(
+      "https://cagoskins-ed80d8718043.herokuapp.com/api/v1/favorites/" +
+        user_id +
+        "/" +
+        skin_id
+    );
+    console.log(response.data);
+  };
 
   const haveInFav = async (skin_id) => {
     if (localStorage.getItem("userId")) {
@@ -129,6 +140,7 @@ export default function jsonRequest() {
     skinsCount,
     getSkinsCount,
     haveInFav,
+    removeFromFav,
     addToFav,
     getAllSkins,
     getSkinsByName,
