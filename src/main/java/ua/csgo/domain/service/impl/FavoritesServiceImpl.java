@@ -42,7 +42,7 @@ public class FavoritesServiceImpl implements FavoritesService {
                 .orElseThrow(() ->
                         new EntityNotFoundException("Неможливо знайти користувача з ідентифікатором: " + id));
 
-        user.getFavorites().removeIf(skinToRemove -> skinToRemove.getId().equals(skinId));
+        user.getFavorites().removeIf(skinToRemove -> skinToRemove.getSkinId().equals(skinId));
         userRepository.save(user);
         return "Успішно видалено з обраних";
     }
